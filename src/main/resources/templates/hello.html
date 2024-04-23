@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--text: 받아온 텍스트를 그대로 출력.-->
+<h1 th:text="${msg}"></h1>
+<!--utext : 텍스트에 html 태그가 있는 경우, 반영하여 화면에 표시함.-->
+<h1 th:utext="${msg}"></h1>
+
+<hr>
+
+<!--문자열 할당하는 변수 선언-->
+<div th:with="name='hong'">
+    <h3 th:text="${name}"></h3>
+    </div>
+<hr>
+
+<div th:with="num1=9">
+    <h3 th:text="${num1}"></h3>
+</div>
+<hr>
+
+<ul>
+    <li th:each="animal: ${animals}" th:text="${animal}"></li>
+</ul>
+
+</body>
+</html>

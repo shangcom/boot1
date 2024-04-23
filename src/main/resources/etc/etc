@@ -1,0 +1,74 @@
+ex1 작성하다 만것
+
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+
+
+<!--<h4>[[${list}]]</h4>-->
+<!--<hr/>-->
+<!--<h4 th:text="${list}"></h4>-->
+<!--&lt;!&ndash;반복문&ndash;&gt;-->
+<!--&lt;!&ndash;방법1. 반복이 필요한 태그에 th:each 적용.&ndash;&gt;-->
+<!--&lt;!&ndash;기존 html 태그 그대로 사용할 수 있음.&ndash;&gt;-->
+<!--<ul>-->
+<!--    <li th:each="str:${list}" th:text="${str}"></li>-->
+<!--</ul>-->
+
+<!--&lt;!&ndash;방법2. <th:block>이라는 별도의 태그 이용&ndash;&gt;-->
+<!--<ul>-->
+<!--    <th:block th:each="str:${list}">-->
+<!--        <li>[[${str}]]</li>-->
+<!--    </th:block>-->
+<!--</ul>-->
+
+<!--&lt;!&ndash;반복문의 status 변수&ndash;&gt;-->
+<!--<ul>-->
+<!--    &lt;!&ndash;    status.index로 인덱스 번호 찍기&ndash;&gt;-->
+<!--    <li th:each="str,status:${list}">-->
+<!--        [[${status.index}]] &#45;&#45; [[${str}]]-->
+<!--    </li>-->
+
+<!--    <br>-->
+<!--    &lt;!&ndash;else문&ndash;&gt;-->
+<!--    <li th:each="str,status:${list}">-->
+<!--        <span th:if="${status.odd}"> ODD &#45;&#45; [[${str}]]</span>-->
+<!--        <span th:unless="${status.odd}"> EVEN == [[${str}]]</span>-->
+<!--    </li>-->
+
+<!--    <br>-->
+<!--    <li th:each="str,status:${list}">-->
+<!--        &lt;!&ndash; 삼항연산자 1. 항목이 홀수번째일 때만 (status.odd == true), 'ODD-&#45;&#45;'-->
+<!--문자열과 해당 항목의 내용(str)을 연결하여 <span> 요소의 텍스트로 설정.&ndash;&gt;-->
+<!--        <span th:text="${status.odd} ?'ODD-&#45;&#45;'+${str}"></span>-->
+<!--    </li>-->
+
+<!--    <br>-->
+
+<!--    &lt;!&ndash;삼항연산자 2. &ndash;&gt;-->
+<!--    <li th:each="str,status:${list}">-->
+<!--        <span th:text="${status.odd} ?'ODD###'+${str}:'EVEN###'+${str}"></span>-->
+<!--    </li>-->
+
+<!--</ul>-->
+
+<!--&lt;!&ndash; switch문 &ndash;&gt;-->
+<!--<ul>-->
+<!--    <li th:each="str, status: ${list}">-->
+<!--    <th:block th:switch="${ststis.index % 3}">-->
+<!--        <span th:case="0">0</span>-->
+<!--        <span th:case="1">1</span>-->
+<!--        <span th:case="2">2</span>-->
+<!--    </th:block>-->
+<!--    </li>-->
+<!--</ul>-->
+<!--<br>-->
+
+<!--&lt;!&ndash;링크 처리&ndash;&gt;-->
+<!--<a th:href="@{/hello}">Go to /hello</a>-->
+<!--</body>-->
+<!--</html>-->
